@@ -62,5 +62,5 @@ Execute this batch file from the Windows command prompt at the desired location 
 
 **Testing:**
 
-* The scripts have been tested on Windows 10 Enterprise (Version 10.0.19045 Build 19045), Windows 11 Pro (23H2, OS build 22631.3593), MacOS, and Linux (Debian 12; bookworm)
+* The scripts have been tested on Windows 10 Enterprise (Version 10.0.19045 Build 19045), Windows 11 Pro (23H2, OS build 22631.3593), MacOS (Apple M1; mscOS Sonoma 14.4), and Linux (Debian 12; bookworm)
 
