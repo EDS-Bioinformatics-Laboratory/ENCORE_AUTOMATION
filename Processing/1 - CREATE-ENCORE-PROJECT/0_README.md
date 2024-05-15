@@ -62,5 +62,5 @@ Execute this batch file from the Windows command prompt at the desired location 
 
 **Testing:**
 
-* The scripts have been tested on Windows 11, MacOS, and Linux
+* The scripts have been tested on Windows 11, MacOS, and Linux (Debian 12; bookworm)
 
