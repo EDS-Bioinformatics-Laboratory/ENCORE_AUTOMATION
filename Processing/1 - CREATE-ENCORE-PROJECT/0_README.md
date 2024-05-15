@@ -23,9 +23,10 @@ Execute this batch file from the Windows command prompt at the desired location 
 
 **Instructions:**
 
-1. Open Command Prompt (Windows cmd or Unix shell).
-2. Navigate to the directory where you want to create the ENCORE project.
-3. Run the batch script by typing its name and pressing Enter.
+1. Review and modify the script's variables according to your project requirements before execution.
+2. Open Command Prompt (Windows cmd or Unix shell).
+3. Navigate to the directory where you want to create the ENCORE project.
+4. Run the batch script by typing its name and pressing Enter.
 
 **Parameters:**
 
@@ -56,11 +57,10 @@ Execute this batch file from the Windows command prompt at the desired location 
 
 **Note:**
 
-- Review and modify the script's variables according to your project requirements before execution.
 - Ensure you have necessary permissions and authentication tokens for GitHub operations.
 - The scripts create a private repository. To make a public repository, change the curl command in the script.
 
 **Testing:**
 
-* The scripts have been tested on Windows 11, MacOS, and Linux (Debian 12; bookworm)
+* The scripts have been tested on Windows 10 Enterprise (Version 10.0.19045 Build 19045), Windows 11 Pro (23H2, OS build 22631.3593), MacOS, and Linux (Debian 12; bookworm)
 
