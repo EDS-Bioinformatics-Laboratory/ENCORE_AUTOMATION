@@ -1,4 +1,4 @@
-![]()
+![Logo](https://github.com/EDS-Bioinformatics-Laboratory/ENCORE_AUTOMATION/Manuscript/ENCORE_v22_MetaArXiv/Figures/ENCORE-logo.png)
 
 ### ENCORE AUTOMATION
 
