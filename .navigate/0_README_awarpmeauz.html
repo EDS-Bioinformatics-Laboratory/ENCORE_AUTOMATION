@@ -1,0 +1,51 @@
+<h3>Name Of Computation</h3>
+<p><u><em>Explanation</em></u>:</p>
+<p><em>Subdirectories</em></p>
+<ul>
+<li><em><strong>Code</strong>. Contains the (in-house developed) software used for the computational analysis.</em></li>
+<li><em><strong>CodeDocumentation</strong>. Any external documentation that is available about the software such as requirement specifications, software design, source code documentation, testing requirements, and end-user instructions. Alternatively, part of this documentation can be placed in the code itself, or in the code 0_README.md file.</em></li>
+<li><em><strong>Data</strong>. Raw, meta, and pre-processed data.</em></li>
+<li><em><strong>Notebooks</strong>. Contains interactive notebooks (e.g, R or Jupyter notebooks), which may include data and results. Minimize the size of the Notebook prior to pushing to GitHub.</em></li>
+<li><em><strong>Results</strong>. (Intermediate) results such as figures and tables from the computational analysis. Additional sub-directories within \Results, to organize the results, are allowed.</em> </li>
+<li><strong><em>Settings.</em></strong> </li>
+<li><em>Contains any file with input parameters for e.g., statistical analysis and computational simulations. If only few parameters or parameter files are required then these might also be placed in the \Code directory or directly in the code itself.</em></li>
+</ul>
+<p><em><u>Instructions</u>:</em> </p>
+<ul>
+<li><em>Remove all Instructions and the Explanation once you have completed the template.</em></li>
+<li><em>Level of detail: Information provided should be sufficient for someone who was not involved in the project and/or has limited knowledge about the topic,  to understand and reproduce the project.</em> </li>
+</ul>
+<p><u><em>Conceptual description of methodology to improve transparency.</em></u></p>
+<ul>
+<li><em>Brief description of used pre-existing methods (version) including specification of the mathematical/statistical model, parameters, variables, references, etc.</em></li>
+<li><em>If a new method is developed that this method should be described in full detail.</em> </li>
+<li><em>Describe why the selected or developed computational approach is valid for your research question.</em></li>
+<li><em>This allows your peers to make their own judgement about the approach and results.</em> </li>
+<li><em>Considered alternatives?</em></li>
+<li><em>Detailed description of all data filtering, reduction, normalization, etc steps that are performed prior to the downstream analysis.</em></li>
+<li><em>Avenues of exploration examined throughout development, including information about negative findings.</em></li>
+<li><em>.......</em></li>
+</ul>
+<p><em><u>Manual steps</u></em></p>
+<p><em><strong>Avoid</strong> manual data manipulation steps. Instead of manually changing data (e.g., format conversion, filtering), aim to make use of small custom scripts. Manual steps are a main cause for irreproducible results.</em>  </p>
+<ul>
+<li><em>It is strongly recommended to implement an executable description of the sequence of steps taken helps to reproduce results (e.g., Snakemake, https://snakemake.github.io; pytask, https://github.com/pytask-dev/pytask; any other workflow system)</em></li>
+</ul>
+<p><em><u>Intermediate results and hierarchical output</u></em></p>
+<p><em>Record intermediate results (preferable in a standardized format). Generate hierarchical analysis output, allowing layers of increasing detail to be inspected. This can reveal discrepancies toward what is assumed, and can in this way uncover bugs or faulty interpretation that are not apparent in the final results. It also allows any inconsistency to be tracked to the step where the problem occurs.  It also allows critical examination of the full process behind a result. Clearly document the intermediate/final results and the imposed hierarchy.</em></p>
+<p>====== TEMPLATE STARTS HERE ======</p>
+<p><strong>Software environment</strong> (alternatively can be specified in \Processing\0_SoftwareEnvironment)</p>
+<ul>
+<li>
+<p><strong>Operating System(s) / version(s) used during development (and testing): </strong></p>
+</li>
+<li>
+<p><strong>Specific hardware requirements:</strong></p>
+</li>
+<li>
+<p><strong>Software environment (e.g., programming language + version):</strong> </p>
+</li>
+</ul>
+<p><strong>Conceptual description of methodology</strong> </p>
+<p><strong>Random seed</strong>: [if used]</p>
+<p><strong>Description of manual steps</strong>:</p>
