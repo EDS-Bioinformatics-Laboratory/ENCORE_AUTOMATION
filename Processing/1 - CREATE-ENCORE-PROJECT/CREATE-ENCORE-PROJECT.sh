@@ -94,7 +94,8 @@ curl -X POST -H "Authorization: token $TOKEN" -d "{\"name\":\"$REPO_NAME\", \"pr
 
 echo "LINK THE REPOSITORY TO YOUR LOCAL PROJECT"
 $GITBASH -c 'git init'
-$GITBASH -c "git remote add origin https://github.com/EDS-Bioinformatics-Laboratory/$REPO_NAME.git"
+#$GITBASH -c "git remote add origin https://github.com/EDS-Bioinformatics-Laboratory/$REPO_NAME.git" # remote via https
+$GITBASH -c "git remote add origin git@github.com:EDS-Bioinformatics-Laboratory/$REPO_NAME.git" # remote via ssh
 $GITBASH -c 'git pull origin main'
 
 $GITBASH -c 'git status'
