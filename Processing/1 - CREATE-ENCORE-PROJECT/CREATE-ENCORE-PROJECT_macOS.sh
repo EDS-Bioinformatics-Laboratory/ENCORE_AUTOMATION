@@ -5,7 +5,7 @@ echo $(date)
 
 # ==============================================================================================================================
 # This bash script will create an ENCORE project on your local harddisk at the location where you 
-# run this batch script. It will also create a GitHub repository for your project and link it to the
+# run this bash script. It will also create a GitHub repository for your project and link it to the
 # \Processing directory.
 #
 # VERSION 1.0
@@ -14,20 +14,11 @@ echo $(date)
 #
 # Execute this batch file from the Unix/MacOS command prompt at the location where you wish to
 # create your project directory. 
-# see https://www.wikihow.com/Run-a-Batch-File-from-the-Command-Line-on-Windows
 #
 # ISSUES
 # -Topics are not created for the GitHub repository
 #
 # ==============================================================================================================================
-
-
-# ==========================================
-# SET GITBASH LOCATION
-# ==========================================
-# This script makes use of GITBASH
-# Set the location of the bash executable
-GITBASH="/usr/bin/bash"
 
 
 
