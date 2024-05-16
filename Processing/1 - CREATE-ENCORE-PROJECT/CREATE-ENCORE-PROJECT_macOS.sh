@@ -107,18 +107,3 @@ git status
 
 echo "CONGRATULATIONS! YOU JUST CREATED YOUR ENCORE PROJECT AND GITHUB REPOSITORY."
 echo $(date)
-
-
-
-
-echo "LINK THE REPOSITORY TO YOUR LOCAL PROJECT"
-$GITBASH -c 'git init'
-$GITBASH -c "git remote add origin https://github.com/EDS-Bioinformatics-Laboratory/$REPO_NAME.git"
-$GITBASH -c 'git pull origin main'
-
-$GITBASH -c 'git status'
-$GITBASH -c 'git add .'
-$GITBASH -c 'git commit -m "First commit of Processing directory"'
-$GITBASH -c 'git branch -M main'
-$GITBASH -c 'git push -u origin main'
-$GITBASH -c 'git status'
