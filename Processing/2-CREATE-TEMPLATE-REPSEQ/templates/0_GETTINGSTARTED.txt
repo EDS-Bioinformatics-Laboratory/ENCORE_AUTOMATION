@@ -1,0 +1,9 @@
+﻿Aim: Analyze a sequence run with adaptive immune receptor repertoire sequencing data with RESEDA
+
+Data: Raw sequences in fastq format, and meta data, is located in the ./Data directory
+
+Software: RESEDA, see ./Processing/<OUTDIR>/Code/reseda/
+
+Main results: ./Processing/<OUTDIR>/Results/
+
+Specific comments for this sequence run: none
