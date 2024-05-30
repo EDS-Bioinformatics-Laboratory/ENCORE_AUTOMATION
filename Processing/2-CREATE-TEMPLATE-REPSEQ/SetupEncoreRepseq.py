@@ -23,7 +23,7 @@ def readConfig(f):
     return(data)
 
 
-def executeComand(command, cwd = "."):
+def executeCommand(command, cwd = "."):
     '''
     Description: execute a shell command from a certain work directory
     :param command: the command (str)
@@ -51,20 +51,17 @@ def cloneEncore(config):
     run = config["sequence_run"]["run"]
     outdir = config["sequence_run"]["outdir"]
 
-    command = "rm -rf ENCORE"
-    executeComand(command)
-
     command = "git clone " + encore
-    executeComand(command)
+    executeCommand(command)
 
     command = "mv ENCORE/ " + run
-    executeComand(command)
+    executeCommand(command)
 
     command = "rm -rf " + run + "/.git/"
-    executeComand(command)
+    executeCommand(command)
 
     command = "mv " + run + "/Processing/NameOfComputation_1/ " + run + "/Processing/" + outdir + "/"
-    executeComand(command)
+    executeCommand(command)
 
 
 def createGitBranch(config):
@@ -79,16 +76,22 @@ def createGitBranch(config):
     outdir = config["sequence_run"]["outdir"]
 
     command = "git clone " + reseda
-    executeComand(command)
+    executeCommand(command)
 
     command = "git branch " + run
-    executeComand(command, cwd="reseda")
+    executeCommand(command, cwd="reseda")
 
     command = "git checkout " + run
-    executeComand(command, cwd="reseda")
+    executeCommand(command, cwd="reseda")
 
-    command = "mv reseda " + run + "/Processing/" + outdir + "/Code/reseda"
-    executeComand(command)
+    try:
+        shutil.rmtree(run + "/Processing/" + outdir + "/Code")
+    except:
+        print("Couldn't remove dir: " + run + "/Processing/" + outdir + "/Code")
+        exit()
+
+    command = "mv reseda " + run + "/Processing/" + outdir + "/Code"
+    executeCommand(command)
 
 
 def addProjectReadme(config):
@@ -137,14 +140,6 @@ def addGettingStarted(config):
     fhOut = open(run + "/0_GETTINGSTARTED.txt", "w")
     print(text, file=fhOut)
     fhOut.close()
-
-    # Remove the other templates
-    myfiles = ["0_GETTINGSTARTED.docx", "0_GETTINGSTARTED.html", "0_GETTINGSTARTED.tex"]
-    for myfile in myfiles:
-        try:
-            os.remove(run + "/" + myfile)
-        except:
-            pass
 
 
 def addReadmeData(config):
@@ -198,11 +193,10 @@ def addGitInfo(config):
     print(text, file=fhOut)
     fhOut.close()
 
-    # Remove old github.txt template
-    try:
-        os.remove(run + "/Processing/github.txt")
-    except:
-        pass
+    # And again
+    fhOut = open(run + "/Processing/github.txt", "w")
+    print(text, file=fhOut)
+    fhOut.close()
 
 
 def addReadmeProcessing(config):
@@ -230,12 +224,6 @@ def addReadmeProcessing(config):
     fhOut = open(run + "/Processing/README.md", "w")
     print(text, file=fhOut)
     fhOut.close()
-
-    # Remove the obsolete Data sub directory
-    try:
-        shutil.rmtree(run + "/Processing/Data/")
-    except:
-        pass
 
 
 def addReadmeComputation(config):
@@ -287,6 +275,38 @@ def addReadmeProcessingResults(config):
     fhOut.close()
 
 
+def removeUnused(config):
+    '''
+    Description: remove unused files and directories
+    Parameters
+    ----------
+    config: config (dict) from config.yml
+    Returns: nothing
+    -------
+    '''
+    # Required variables from config
+    run = config["sequence_run"]["run"]
+    outdir = config["sequence_run"]["outdir"]
+
+    # Remove directories
+    shutil.rmtree(run + "/Sharing/")
+    shutil.rmtree(run + "/Processing/Data/")
+    shutil.rmtree(run + "/Processing/" + outdir + "/Data")
+
+    # Remove .git from Code directory, unless Barbera is running this script
+    if os.getlogin() != "barbera" and "schaik" not in os.getlogin():
+        shutil.rmtree(run + "/Processing/" + outdir + "/Code/.git/")
+
+    # Rename gitignore-FSS-template.txt to .gitignore
+    command = "mv " + run + "/Processing/gitignore-FSS-template.txt " + run + "/Processing/.gitignore"
+    executeCommand(command)
+
+    # Remove specific unused files
+    myfiles = ["0_GETTINGSTARTED.docx", "0_GETTINGSTARTED.html", "0_GETTINGSTARTED.tex"]
+    for myfile in myfiles:
+        os.remove(run + "/" + myfile)
+
+
 def uploadFSS(config):
     '''
     Description: uploads the FSS directory with rclone to a remote storage server
@@ -299,7 +319,7 @@ def uploadFSS(config):
 
     # Upload the directory
     command = "rclone copy " + run + " " + rclone_root + run
-    executeComand(command)
+    executeCommand(command)
 
 
 if __name__ == "__main__":
@@ -325,6 +345,9 @@ if __name__ == "__main__":
     addReadmeProcessing(config)
     addReadmeComputation(config)
     addReadmeProcessingResults(config)
+
+    # Remove directories and files that are not used
+    removeUnused(config)
 
     # Upload the FSS directory to a remote storage place (in this case a webdav server was configured)
     uploadFSS(config)
