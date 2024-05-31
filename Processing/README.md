@@ -12,5 +12,4 @@ This directory contains a Windows batch file and a Unix/MacOS bash script to aut
 
 This directory contains a script that automates the creation of an ENCORE project for adaptive immune receptor repertoire sequencing (AIRseq). This template contains the RESEDA pipeline for doing the analysis.  
 
-* See [details](./2 - CREATE-TEMPLATE-REPSEQ/README.md)
-* [Details](https://github.com/EDS-Bioinformatics-Laboratory/ENCORE_AUTOMATION/blob/main/Processing/2%20-%20CREATE-TEMPLATE-REPSEQ/README.md)
+* See [details](https://github.com/EDS-Bioinformatics-Laboratory/ENCORE_AUTOMATION/blob/main/Processing/2%20-%20CREATE-TEMPLATE-REPSEQ/README.md)
