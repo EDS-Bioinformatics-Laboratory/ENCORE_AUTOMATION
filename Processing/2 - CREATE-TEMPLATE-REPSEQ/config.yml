@@ -1,8 +1,8 @@
 people:
   pi: "Prof Antoine van Kampen"
   bioinformatician: "Barbera van Schaik"
-  collaborator: "Prof Niek de Vries"
-  laboratory_contact: "Dr Dornatien Anang"
+  collaborator: "Prof. dr. Jane Doe"
+  laboratory_contact: "Dr John Doe"
 
 sequence_run:
   run: runNN-20240528-nextseq
