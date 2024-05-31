@@ -1,0 +1,78 @@
+<p><strong>CREATE-ENCORE-PROJECT</strong>  </p>
+<p>This directory contains a Windows batch file and a Unix/MacOS bash script to automatically initialize an ENCORE project: (i) create a local directory, (ii) create a repository on GitHub, (iii) link the \Processing directory to the GitHub repository</p>
+<ul>
+<li>CREATE-ENCORE-PROJECT.bat  (Windows Batch file)</li>
+<li>CREATE-ENCORE-PROJECT.sh (for Unix)  (Unix shell script)</li>
+<li>CREATE-ENCORE-PROJECT_macOS.sh (Unix shell script)</li>
+</ul>
+<p><strong>Overview:</strong></p>
+<p>This script automates the setup process for creating an ENCORE project on your local hard disk and linking it to a GitHub repository. It streamlines the creation of necessary directories, GitHub repository setup, and initialization of the local Git repository.</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>Review and modify the script's parameters according to your project requirements before execution.</li>
+<li>Execute the script from the command line prompt at the desired location where you wish to create your project directory.</li>
+<li>Open Command Prompt (Windows cmd or Unix shell).</li>
+<li>Navigate to the directory where you want to create the ENCORE project.</li>
+<li>Run the batch script by typing its name and pressing Enter.</li>
+</ol>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>YOUR TOKEN:</code> Your personal access token (classic). See also https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens. Alternatively, use a SSH key (see https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)</p>
+</li>
+<li>
+<p><code>YOUR_NAME</code>: Your name (not your GitHub account username).</p>
+</li>
+<li>
+<p><code>PROJECT_DESCRIPTION</code>: Short description/title of the project.</p>
+</li>
+<li>
+<p><code>HOME_PAGE</code>: URL of your research group/department.</p>
+</li>
+<li>
+<p><code>REPO</code>: GitHub API URL for creating repositories. (see also See https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28)</p>
+</li>
+<li>
+<p><code>REPO_NAME</code>: Name of the GitHub repository.</p>
+</li>
+<li>
+<p><code>LICENSE</code>: Open-Source software license associated with the GitHub repository.</p>
+</li>
+<li>
+<p><code>PROJECT_NAME</code>: Name of the ENCORE project directory on the local hard disk.</p>
+</li>
+</ul>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>
+<p><a href="https://git-scm.com/download/win">GITBASH</a> must be installed. Required for executing Git commands within the script.</p>
+</li>
+<li>
+<p>GitHub account with a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">personal access token</a> (classic token).</p>
+</li>
+<li>
+<p>Ensure appropriate permissions for creating repositories on GitHub.</p>
+</li>
+</ul>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>Topics are not automatically created for the GitHub repository.</li>
+</ul>
+<p><strong>Functionality of script:</strong></p>
+<ol>
+<li>Clones the ENCORE template repository from GitHub.</li>
+<li>Removes the <code>.git</code> directory from the cloned repository.</li>
+<li>Copies <code>.gitignore</code> file to the Processing directory.</li>
+<li>Writes repository information to <code>github.txt</code>.</li>
+<li>Sends a POST request to create the GitHub repository.</li>
+<li>Initializes the local Git repository, adds a remote origin, pulls from the main branch, and pushes the changes to the remote repository.</li>
+</ol>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Ensure you have necessary permissions on your system and authentication tokens (use classic token), or ssh key for GitHub operations.</li>
+<li>The scripts create a private repository. To make a public repository, change the curl command in the script. </li>
+</ul>
+<p><strong>Testing:</strong></p>
+<ul>
+<li>The scripts have been tested on Windows 10 Enterprise (Version 10.0.19045 Build 19045), Windows 11 Pro (23H2, OS build 22631.3593), MacOS (Apple M1; mscOS Sonoma 14.4), and Linux (Debian 12; bookworm)</li>
+</ul>
