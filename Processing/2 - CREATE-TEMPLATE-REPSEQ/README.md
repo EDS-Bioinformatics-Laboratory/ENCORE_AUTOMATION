@@ -2,7 +2,7 @@
 
 ENCORE template for repertoire sequencing ([AIRRseq](https://www.antibodysociety.org/about/)) support projects. AIRRseq, or Adaptive Immune Receptor Repertoire sequencing, is a high-throughput sequencing technology used to analyze the diversity and specificity of B-cell and T-cell receptor repertoires in the immune system. It enables the study of immune responses, disease mechanisms, and the development of immunotherapies by providing detailed insights into the adaptive immune system's receptor sequences.
 
-The Bioinformatics Laboratory has develop RESEDA (REpertoire SEquencing Data Analysis), which is a data analysis workflow for T- and B-cell receptor repertoire sequencing. The workflow identifies clones and their frequency from next generation sequencing of repertoires and includes steps for quality control and bias correction.
+The Bioinformatics Laboratory has developed RESEDA (REpertoire SEquencing Data Analysis), which is a data analysis workflow for T- and B-cell receptor repertoire sequencing. The workflow identifies clones and their frequency from next generation sequencing of repertoires and includes steps for quality control and bias correction.
 
 <u>Authors</u>
 
