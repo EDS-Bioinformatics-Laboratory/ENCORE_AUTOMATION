@@ -1,6 +1,6 @@
 ![Logo](https://github.com/EDS-Bioinformatics-Laboratory/ENCORE_AUTOMATION/blob/main/Manuscript/ENCORE_v22_MetaArXiv/Figures/ENCORE-logo.png)
 
-### ENCORE AUTOMATION
+### ENCORE_AUTOMATION
 
 
 
