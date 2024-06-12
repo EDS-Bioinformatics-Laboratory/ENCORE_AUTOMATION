@@ -1,6 +1,6 @@
 ![]()
 
-### ENCORE AUTOMATION
+### ENCORE_AUTOMATION
 
 **Project start date**: 15 May 2024
 
