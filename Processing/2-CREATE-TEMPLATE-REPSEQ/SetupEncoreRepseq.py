@@ -66,23 +66,24 @@ def cloneEncore(config):
 
 def createGitBranch(config):
     '''
-    Description: clone RESEDA from git, create a separate branch for the analysis
+    Description: clone code from git, create a separate branch for the analysis
     :param config: config (dict) from config.yml
     :return: nothing
     '''
     # Required variables from config
-    reseda = config["git"]["reseda"]
+    analysis_name = config["git"]["analysis_name"]
+    analysis = config["git"]["analysis"]
     run = config["sequence_run"]["run"]
     outdir = config["sequence_run"]["outdir"]
 
-    command = "git clone " + reseda
+    command = "git clone " + analysis
     executeCommand(command)
 
     command = "git branch " + run
-    executeCommand(command, cwd="reseda")
+    executeCommand(command, cwd=analysis_name)
 
     command = "git checkout " + run
-    executeCommand(command, cwd="reseda")
+    executeCommand(command, cwd=analysis_name)
 
     try:
         shutil.rmtree(run + "/Processing/" + outdir + "/Code")
@@ -90,7 +91,7 @@ def createGitBranch(config):
         print("Couldn't remove dir: " + run + "/Processing/" + outdir + "/Code")
         exit()
 
-    command = "mv reseda " + run + "/Processing/" + outdir + "/Code"
+    command = "mv " + analysis_name + " " + run + "/Processing/" + outdir + "/Code"
     executeCommand(command)
 
 
@@ -127,6 +128,7 @@ def addGettingStarted(config):
     # Required variables from config
     run = config["sequence_run"]["run"]
     outdir = config["sequence_run"]["outdir"]
+    analysis_name = config["git"]["analysis_name"]
 
     # read template
     fh = open("templates/0_GETTINGSTARTED.txt")
@@ -135,6 +137,7 @@ def addGettingStarted(config):
 
     # Fill out the template
     text = text.replace("<OUTDIR>", outdir)
+    text = text.replace("<ANALYSIS_NAME>", analysis_name)
 
     # Write the file to the FSS directory
     fhOut = open(run + "/0_GETTINGSTARTED.txt", "w")
@@ -173,12 +176,14 @@ def addReadmeData(config):
 
 def addGitInfo(config):
     '''
-    Description: Add reseda repository to git file
+    Description: Add repository address to git file
     :param config: config (dict) from config.yml
     :return: nothing
     '''
     # Required variables from config
     run = config["sequence_run"]["run"]
+    analysis_name = config["git"]["analysis_name"]
+    analysis = config["git"]["analysis"]
 
     # read template
     fh = open("templates/github.md")
@@ -187,6 +192,8 @@ def addGitInfo(config):
 
     # Fill out github information
     text = text.replace("<RUN>", run)
+    text = text.replace("<ANALYSIS_NAME>", analysis_name)
+    text = text.replace("<ANALYSIS>", analysis)
 
     # Write the file to the FSS directory
     fhOut = open(run + "/Processing/github.md", "w")
@@ -209,6 +216,7 @@ def addReadmeProcessing(config):
     run = config["sequence_run"]["run"]
     outdir = config["sequence_run"]["outdir"]
     bioinformatician = config["people"]["bioinformatician"]
+    analysis_name = config["git"]["analysis_name"]
 
     # read template
     fh = open("templates/README_processing.md")
@@ -219,6 +227,7 @@ def addReadmeProcessing(config):
     text = text.replace("<RUN>", run)
     text = text.replace("<OUTDIR>", outdir)
     text = text.replace("<BIOINFORMATICIAN>", bioinformatician)
+    text = text.replace("<ANALYSIS_NAME>", analysis_name)
 
     # Write the file to the FSS directory
     fhOut = open(run + "/Processing/README.md", "w")
@@ -235,6 +244,7 @@ def addReadmeComputation(config):
     # Required variables from config
     run = config["sequence_run"]["run"]
     outdir = config["sequence_run"]["outdir"]
+    analysis_name = config["git"]["analysis_name"]
 
     # read template
     fh = open("templates/0_README_processing-computation.md")
@@ -244,6 +254,7 @@ def addReadmeComputation(config):
     # Fill out template
     text = text.replace("<RUN>", run)
     text = text.replace("<OUTDIR>", outdir)
+    text = text.replace("<ANALYSIS_NAME>", analysis_name)
 
     # Write the file to the FSS directory
     fhOut = open(run + "/Processing/" + outdir + "/0_README.md", "w")
@@ -334,7 +345,7 @@ if __name__ == "__main__":
     # Clone and setup ENCORE locally
     cloneEncore(config)
 
-    # Pull Reseda repository and create a branch for this specific dataset
+    # Pull Analysis repository and create a branch for this specific dataset
     createGitBranch(config)
 
     # Fill out README files and put these in the correct folder

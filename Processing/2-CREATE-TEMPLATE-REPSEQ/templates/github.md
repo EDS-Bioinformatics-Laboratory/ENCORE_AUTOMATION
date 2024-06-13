@@ -1,8 +1,8 @@
 # Git
 
 ```
-git clone git@github.com:EDS-Bioinformatics-Laboratory/reseda.git
-cd reseda
+git clone <ANALYSIS>
+cd <ANALYSIS_NAME>
 git branch <RUN>
 git checkout <RUN>
 git pull origin <RUN>

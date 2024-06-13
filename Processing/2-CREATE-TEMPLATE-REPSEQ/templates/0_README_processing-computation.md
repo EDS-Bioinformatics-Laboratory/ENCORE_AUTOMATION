@@ -18,7 +18,7 @@ Versions of other software is documented in ./Results/versions/
 
 **Conceptual description of methodology** 
 
-See ./Code/reseda/README.md
+See ./Code/<ANALYSIS_NAME>/README.md
 
 *Subdirectories*
 

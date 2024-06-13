@@ -1,18 +1,19 @@
 people:
   pi: "Prof Antoine van Kampen"
   bioinformatician: "Barbera van Schaik"
-  collaborator: "Prof. dr. Jane Doe"
-  laboratory_contact: "Dr John Doe"
+  collaborator: "Prof. dr. John Doe"
+  laboratory_contact: "Dr Jane Doe"
 
 sequence_run:
-  run: runNN-20240528-nextseq
-  outdir: 20240528-reseda
+  run: runNN-20240613-miseq
+  outdir: 20240613-reseda
   webdavroot: https://researchdrive.surfsara.nl/remote.php/webdav/amc-immunogenomics/RUNS/
   machine: "Illumina NextSeq"
 
 git:
   encore: git@github.com:EDS-Bioinformatics-Laboratory/ENCORE.git
-  reseda: git@github.com:EDS-Bioinformatics-Laboratory/reseda.git
+  analysis_name: reseda
+  analysis: git@github.com:EDS-Bioinformatics-Laboratory/reseda.git
 
 storage:
   rclone_root: "remote:amc-immunogenomics/RUNS/"
