@@ -23,6 +23,7 @@ Sets up an Repertoire Sequencing (AIRRseq) project using the [ENCORE template](h
 
 * It will pull the latest version of the ENCORE template from its Git repository
 * The directory "ENCORE" is renamed to the name of the project (the sequence run)
+* It pulls the RESEDA repository and create a branch for this specific dataset. Next it adds the RESEDA code to the \Processing directory of the ENCORE directory.
 * The ".git" sub directory is removed
 * In the Processing directory the name of computation is renamed to the "outdir" that is specified in config.yml
 * All the README files are filled out and placed in the corresponding FSS directory (templates are located in the "templates" directory)
