@@ -1,6 +1,6 @@
 <h1>ENCORE AIRRseq Template</h1>
 <p>ENCORE template for repertoire sequencing (<a href="https://www.antibodysociety.org/about/">AIRRseq</a>) support projects. AIRRseq, or Adaptive Immune Receptor Repertoire sequencing, is a high-throughput sequencing technology used to analyze the diversity and specificity of B-cell and T-cell receptor repertoires in the immune system. It enables the study of immune responses, disease mechanisms, and the development of immunotherapies by providing detailed insights into the adaptive immune system's receptor sequences.</p>
-<p>The Bioinformatics Laboratory has develop RESEDA (REpertoire SEquencing Data Analysis), which is a data analysis workflow for T- and B-cell receptor repertoire sequencing. The workflow identifies clones and their frequency from next generation sequencing of repertoires and includes steps for quality control and bias correction.</p>
+<p>The Bioinformatics Laboratory has developed RESEDA (REpertoire SEquencing Data Analysis), which is a data analysis workflow for T- and B-cell receptor repertoire sequencing. The workflow identifies clones and their frequency from next generation sequencing of repertoires and includes steps for quality control and bias correction.</p>
 <p><u>Authors</u></p>
 <ul>
 <li>Barbera van Schaik, b.d.vanschaik@amsterdamumc.nl</li>
@@ -18,6 +18,7 @@
 <ul>
 <li>It will pull the latest version of the ENCORE template from its Git repository</li>
 <li>The directory "ENCORE" is renamed to the name of the project (the sequence run)</li>
+<li>It pulls the RESEDA repository and create a branch for this specific dataset. Next it adds the RESEDA code to the \Processing directory of the ENCORE directory.</li>
 <li>The ".git" sub directory is removed</li>
 <li>In the Processing directory the name of computation is renamed to the "outdir" that is specified in config.yml</li>
 <li>All the README files are filled out and placed in the corresponding FSS directory (templates are located in the "templates" directory)</li>
