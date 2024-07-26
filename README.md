@@ -14,6 +14,14 @@
 
 
 
+This repository can be cited as:
+
+* Van Kampen, A., Mahamune, U., & Van Schaik, B. (2024). EDS-Bioinformatics-Laboratory/ENCORE_AUTOMATION: ENCORE Automation (V1.0). Zenodo. https://doi.org/10.5281/zenodo.12955697
+
+
+
+
+
 
 
 
