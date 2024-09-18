@@ -39,6 +39,7 @@ rem ==========================================
 
 rem Set your GitHub token (use a classic token)
 rem See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+rem for creating a classic token. When creating the token, enable to full 'scope' for this token.
 set TOKEN=<YOUR TOKEN>
 
 rem The next three items will appear in the description of the GitHub repository that will be created.
@@ -51,7 +52,7 @@ rem Use this URL if the GitHub repository is part of an institutional account (i
 rem See https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28
 set REPO=https://api.github.com/orgs/EDS-Bioinformatics-Laboratory/repos
 
-rem Use this URL is the GitHub repository should reside under your personal GitHub account.
+rem Alternatively, use this URL if the GitHub repository should reside under your personal GitHub account.
 rem REPO=https://api.github.com/user/repos
 
 rem Name of GitHub repository

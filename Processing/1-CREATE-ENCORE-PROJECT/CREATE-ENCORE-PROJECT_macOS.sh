@@ -27,6 +27,8 @@ echo $(date)
 # ==========================================
 
 # Set your GitHub token (use a classic token)
+# See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+# for creating a classic token. When creating the token, enable to full 'scope' for this token.
 TOKEN="YOUR TOKEN"
 
 # The next three items will appear in the description of the GitHub repository that will be created.
