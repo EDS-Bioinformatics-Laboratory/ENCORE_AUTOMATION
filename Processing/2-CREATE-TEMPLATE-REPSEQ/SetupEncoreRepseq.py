@@ -4,6 +4,7 @@ import yaml
 import datetime
 import os
 import shutil
+import getpass
 
 
 def readConfig(f):
@@ -305,7 +306,7 @@ def removeUnused(config):
     shutil.rmtree(run + "/Processing/" + outdir + "/Data")
 
     # Remove .git from Code directory, unless Barbera is running this script
-    if os.getlogin() != "barbera" and "schaik" not in os.getlogin():
+    if getpass.getuser() != "barbera" and "schaik" not in getpass.getuser():
         shutil.rmtree(run + "/Processing/" + outdir + "/Code/.git/")
 
     # Rename gitignore-FSS-template.txt to .gitignore

@@ -59,8 +59,8 @@ Run: ``rclone config``
 ```
 name> remote
 Storage> webdav
-url> https://researchdrive.surfsara.nl/remote.php/nonshib-webdav
-vendor> owncloud
+url> https://amsterdamumc.data.surf.nl/remote.php/dav/files/b.d.vanschaik@amsterdamumc.nl
+vendor> nextcloud
 ```
 
 Note that many storage systems are supported by rclone, such as, Dropbox, Google drive, etc
